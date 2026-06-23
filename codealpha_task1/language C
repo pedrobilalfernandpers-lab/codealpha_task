@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    //1.Déclaration des variables
+    float a ,b;
+    char operation;
+
+    //2.Lecture des deux nombres (format %f pour float)
+    printf("Entrez deux nombres : \n");
+    scanf ("%f %f",&a, &b);
+
+    //3.Lecture de l'operation(format %c pour un caractere : +, -, *, /)
+    printf ("Entrez une operation");
+    // Le petit espace avant %c est une astuce pour vider la tampon d'entrée
+    scanf(" %c", &operation);
+
+    //4.Structure Switch propre au langage C
+    switch (operation) {
+      case '+':
+        printf("Résultat : %f\n", a + b);
+        break; // Ne pas oublier le break pour sortir du switch
+      case '-':
+        print("Résultat : %f\n", a - b);
+        break;
+      case '/':
+        // Condition pour éviter la division par zéro
+        if (b!=0) {
+            printf("Résultat : %f\n", a / b);
+
+        }
+        else {
+            printf ("Erreur : Division par zero impossible !\n");
+        }
+        break;
+      case '*' :
+        printf("Resultat : %f\n" , a * b);
+        break;
+
+    default:
+        printf("Operation invalide.\n");
+
+    }
+
+    return 0; //Fin du programme principal
+
+}
